@@ -1513,6 +1513,25 @@ form textarea {
     height: 295px;
   }
 }
+@media screen and (max-width: 380px) {
+  #container > .m_center {
+    width: 90%;
+  }
+  #container > .m_center .menu {
+    width: 90%;
+  }
+  #container > .m_center .m_cont1 .listwrap .listbox {
+    height: 580px;
+  }
+  #container > .m_center .m_cont1 .listwrap .listbox .prd_img {
+    width: 100%;
+    height: 485px;
+  }
+  #container > .m_center .m_cont1 .listwrap .listbox .prd_img > img {
+    width: 195px;
+    height: 295px;
+  }
+}
 @media screen and (max-width: 1200px) {
   #container .br_cont3 {
     margin-bottom: 120px;
