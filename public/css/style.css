@@ -1621,8 +1621,26 @@ form textarea {
   #container .br_cont4 .center .right .sub_title {
     width: 100%;
     left: 0;
-    bottom: -175px;
+    bottom: -210px;
     margin-bottom: 0;
+  }
+}
+@media screen and (max-width: 380px) {
+  #container .br_cont4 .center {
+    margin-bottom: 200px;
+  }
+  #container .br_cont4 .center .right {
+    top: 935px;
+    left: 0;
+  }
+  #container .br_cont4 .center .right .sub_title {
+    width: 100%;
+    left: 0;
+    bottom: -210px;
+    margin-bottom: 0;
+  }
+  #container .br_cont5 {
+    margin-top: 220px;
   }
 }
 @media screen and (max-width: 1200px) {

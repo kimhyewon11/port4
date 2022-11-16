@@ -117,11 +117,35 @@
                     .sub_title { 
                         width: 100%;
                         left: 0;
-                        bottom: -175px;
+                        bottom: -210px;
                         margin-bottom: 0;
                     }
                 }
             }
+        }
+    }
+   
+}
+@media screen and (max-width:380px)
+{
+    #container { 
+        .br_cont4 { 
+            .center {
+                margin-bottom: 200px;
+                .right { 
+                    top:935px;
+                    left: 0;
+                    .sub_title { 
+                        width: 100%;
+                        left: 0;
+                        bottom: -210px;
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+        .br_cont5 {
+            margin-top: 220px;
         }
     }
    
