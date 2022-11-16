@@ -7,10 +7,7 @@
             .menu { 
                 margin: 50px auto 100px;
                 display: flex;
-                width: 80%;
-               > li { 
-                margin-left: 15px ;
-            }
+                width: 50%;
         }
             .m_cont1 { 
                 width: 100%;
@@ -51,9 +48,6 @@
                 margin: 50px auto 100px;
                 display: flex;
                 width: 50%;
-               > li { 
-                margin-left: 15px ;
-                }
             }   
             .m_cont1 { 
                 width: 100%;
@@ -92,7 +86,12 @@
     #container { 
         >.m_center {
             .menu { 
-                width: 80%;   
+                width: 50%;   
+                > li { 
+                    >span { 
+                        padding: 0 10px;
+                    }
+                    }
             }   
             .m_cont1 { 
                 .listwrap {
@@ -113,13 +112,18 @@
         }
     }
 }
-@media screen and (max-width:380px)
+@media screen and (max-width:390px)
 {
     #container { 
         >.m_center {
             width: 90%;
             .menu { 
-                width: 90%;   
+                width: 70%;
+                >li { 
+                    span { 
+                        padding: 0 5px;
+                    }
+                }   
             }   
             .m_cont1 { 
                 .listwrap {

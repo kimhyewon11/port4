@@ -720,16 +720,13 @@ textarea {
   display: flex;
   width: 30%;
 }
-#container > .m_center .menu > li {
-  margin-left: 30px;
-}
 #container > .m_center .menu > li > a {
   color: #a6a6a6;
   font-size: 15px;
-  padding-right: 30px;
 }
 #container > .m_center .menu > li > span {
   color: #929292;
+  padding: 0 30px;
 }
 #container > .m_center .menu > li.on a {
   color: #222;
@@ -1375,7 +1372,7 @@ form textarea {
   }
   #container .main_cont3 .center .slider .view {
     width: 600%;
-    height: 700px;
+    height: 500px;
   }
   #container .main_cont3 .center .slider .view .box .product1 {
     width: 30%;
@@ -1427,10 +1424,7 @@ form textarea {
   #container > .m_center .menu {
     margin: 50px auto 100px;
     display: flex;
-    width: 80%;
-  }
-  #container > .m_center .menu > li {
-    margin-left: 15px;
+    width: 50%;
   }
   #container > .m_center .m_cont1 {
     width: 100%;
@@ -1465,9 +1459,6 @@ form textarea {
     display: flex;
     width: 50%;
   }
-  #container > .m_center .menu > li {
-    margin-left: 15px;
-  }
   #container > .m_center .m_cont1 {
     width: 100%;
     margin: 0 auto;
@@ -1499,7 +1490,10 @@ form textarea {
 }
 @media screen and (max-width: 540px) {
   #container > .m_center .menu {
-    width: 80%;
+    width: 50%;
+  }
+  #container > .m_center .menu > li > span {
+    padding: 0 10px;
   }
   #container > .m_center .m_cont1 .listwrap .listbox {
     height: 580px;
@@ -1513,12 +1507,15 @@ form textarea {
     height: 295px;
   }
 }
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 390px) {
   #container > .m_center {
     width: 90%;
   }
   #container > .m_center .menu {
-    width: 90%;
+    width: 70%;
+  }
+  #container > .m_center .menu > li span {
+    padding: 0 5px;
   }
   #container > .m_center .m_cont1 .listwrap .listbox {
     height: 580px;
