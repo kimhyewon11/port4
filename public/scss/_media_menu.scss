@@ -7,28 +7,11 @@
             .menu { 
                 margin: 50px auto 100px;
                 display: flex;
-                width: 500px;
-        
+                width: 80%;
                > li { 
-                margin-left: 30px ;
-                  >  a { 
-                    color: #a6a6a6;
-                    font-size: 15px;
-                    padding-right: 30px;
-                    
-                    }
-                   
-                > span { 
-                    color: #929292;
-                    }
-                }
-                >li.on { 
-                    a{
-                        color: #222;
-                        font-weight: 800;
-                    }
-                }
+                margin-left: 15px ;
             }
+        }
             .m_cont1 { 
                 width: 100%;
                 margin: 0 auto;
@@ -64,6 +47,14 @@
     #container { 
         >.m_center { 
             width:90%;
+            .menu { 
+                margin: 50px auto 100px;
+                display: flex;
+                width: 50%;
+               > li { 
+                margin-left: 15px ;
+                }
+            }   
             .m_cont1 { 
                 width: 100%;
                 margin: 0 auto;
@@ -99,7 +90,10 @@
 @media screen and (max-width:540px)
 {
     #container { 
-        >.m_center { 
+        >.m_center {
+            .menu { 
+                width: 80%;   
+            }   
             .m_cont1 { 
                 .listwrap {
                     .listbox { 

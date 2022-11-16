@@ -64,3 +64,19 @@
         }
     }
 }
+
+@media screen and (max-width:540px)
+{
+    .admin_menu { 
+        width: 100%;
+        margin: 0 auto 100px;
+        display: flex;
+    
+    }
+    
+    .storewrap { 
+        .list {
+            width: 100%;
+        }
+    }
+}

@@ -171,6 +171,7 @@ textarea {
   font-size: 22px;
   font-weight: bold;
   margin-bottom: 20px;
+  color: #000;
 }
 #footer .center .left .top_info > p {
   color: #333;
@@ -182,6 +183,9 @@ textarea {
   color: #333;
   line-height: 25px;
   margin-bottom: 10px;
+}
+#footer .center .left .bot_info > p > span {
+  color: #333;
 }
 #footer .center .left .copy {
   font-size: 12px;
@@ -714,7 +718,7 @@ textarea {
 #container > .m_center .menu {
   margin: 120px auto 100px;
   display: flex;
-  width: 500px;
+  width: 30%;
 }
 #container > .m_center .menu > li {
   margin-left: 30px;
@@ -940,6 +944,16 @@ form textarea {
   width: 250px;
 }
 
+@media screen and (max-width: 540px) {
+  .admin_menu {
+    width: 100%;
+    margin: 0 auto 100px;
+    display: flex;
+  }
+  .storewrap .list {
+    width: 100%;
+  }
+}
 #container > .m_center {
   width: 87%;
   margin: 100px auto;
@@ -1044,6 +1058,9 @@ form textarea {
 }
 #container .center .list .linewrap .rightwrap .line4 {
   margin-right: 0;
+}
+#container .center .list .linewrap .rightwrap .line4 > div {
+  color: #333;
 }
 #container .center .list .storeImg > img {
   width: 100%;
@@ -1267,7 +1284,7 @@ form textarea {
   }
   #container .main_cont3 .center .slider .view {
     width: 300%;
-    height: 600px;
+    height: 700px;
   }
   #container .main_cont3 .center .slider .view .box .product1 {
     width: 37%;
@@ -1358,7 +1375,7 @@ form textarea {
   }
   #container .main_cont3 .center .slider .view {
     width: 600%;
-    height: 500px;
+    height: 700px;
   }
   #container .main_cont3 .center .slider .view .box .product1 {
     width: 30%;
@@ -1410,22 +1427,10 @@ form textarea {
   #container > .m_center .menu {
     margin: 50px auto 100px;
     display: flex;
-    width: 500px;
+    width: 80%;
   }
   #container > .m_center .menu > li {
-    margin-left: 30px;
-  }
-  #container > .m_center .menu > li > a {
-    color: #a6a6a6;
-    font-size: 15px;
-    padding-right: 30px;
-  }
-  #container > .m_center .menu > li > span {
-    color: #929292;
-  }
-  #container > .m_center .menu > li.on a {
-    color: #222;
-    font-weight: 800;
+    margin-left: 15px;
   }
   #container > .m_center .m_cont1 {
     width: 100%;
@@ -1454,6 +1459,14 @@ form textarea {
 @media screen and (max-width: 930px) {
   #container > .m_center {
     width: 90%;
+  }
+  #container > .m_center .menu {
+    margin: 50px auto 100px;
+    display: flex;
+    width: 50%;
+  }
+  #container > .m_center .menu > li {
+    margin-left: 15px;
   }
   #container > .m_center .m_cont1 {
     width: 100%;
@@ -1485,6 +1498,9 @@ form textarea {
   }
 }
 @media screen and (max-width: 540px) {
+  #container > .m_center .menu {
+    width: 80%;
+  }
   #container > .m_center .m_cont1 .listwrap .listbox {
     height: 580px;
   }

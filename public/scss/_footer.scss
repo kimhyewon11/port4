@@ -15,6 +15,7 @@
                     font-size: 22px;
                     font-weight: bold;
                     margin-bottom: 20px;
+                    color: #000;
                 }
                 >p { 
                     color: #333;
@@ -28,6 +29,9 @@
                     color: #333;
                     line-height: 25px;
                     margin-bottom: 10px;
+                    >span { 
+                        color: #333;
+                    }
                 }
             }
             .copy { 
