@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>매장</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <%- include ("common/header.ejs")%>
+    <div id="container">
+        <div class="center">
+            <!-- 매장 검색시 검색결과 없는 경우 -->
+            <% if(storeData.length === 0) { %>
+                <div class="nomessage">해당하는 매장이 없습니다</div>
+            <% } else { %>
+            <!-- 처음들어왔을 때 모든 매장 리스트 보여줌-->
+            <% for(let i=0; i < storeData.length; i++){ %>
+                <div class="list" >
+                    <div class="linewrap">
+                        <div class="line line1">
+                            <div class="showroom">Showroom</div>
+                            <div class="roomname"><%- storeData[i].name %></div>
+                        </div>
+                        <div class="rightwrap">
+                            <div class="line line2">
+                                <div>운영시간</div>
+                                <div><%- storeData[i].time %></div>
+                            </div>
+                            <div class="line line3">
+                                <div>위치</div>
+                                <div class="location"><%- storeData[i].sido + storeData[i].sigugun + storeData[i].address%></div>
+                            </div>
+                            <div class="line line4">
+                                <div>매장전화번호</div>
+                                <div><%- storeData[i].phone %></div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="storeImg">
+                        <img src="/upload/<%- storeData[i].thumbnail%>">
+                    </div>
+                    <div class="storeContext">
+                        <div><%- storeData[i].context %></div>
+                    </div>
+                </div>
+                <% } %>
+            <% } %>
+            <!-- 사용자가 등록 매장검색구간 -->
+            <form class="s_searchbox" action="/search/storelocal" method="get">
+                <div >
+                    <div class="search_text">지역으로 검색</div>
+                    <!-- 시/도 선택-->
+                    <select id="city1" name="city1">
+                        <option value>시/도 선택</option>
+                    </select>
+                    <!-- 구/군 선택-->
+                    <select id="city2" name="city2">
+                        <option value>구/군 선택</option>
+                    </select>
+                    <button type="submit">검색</button>
+                </div>
+            </form>
+
+            <form class="s_searchbox" action="/search/storename" method="get">
+                <div>
+                    <div class="search_text">매장명으로 검색</div>
+                    <input type="text" name="name">
+                    <button type="submit">검색</button>
+                </div>
+            </form>
+        </div>
+       
+    <%- include ("common/footer.ejs")%>
+
+    <script src="/js/hangjungdong.js"></script>
+    <script src="/js/storeselect.js"></script>
+</body>
+</html>

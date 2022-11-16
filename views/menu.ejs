@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>menu</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <%- include ("common/header.ejs")%>
+    <div id="container">
+        <div class="m_center">
+            <ul class="menu">
+                <li><a href="/menu/all">ALL</a><span>|</span></li>
+                <li><a href="/menu/facial" >Facial</a><span>|</span></li>
+                <li><a href="/menu/hand">Hand</a><span>|</span></li>
+                <li><a href="/menu/life">Lifestyle</a></li>
+            </ul>
+            <div class="m_cont1">
+                <div class="address">
+                    <h2 class="title"><%- prdData[0].category%></h2>
+                    <p class="context">페이셜 케어 제품은 이스라이브러리 특허 성분이 함유되어 피부를 근본적으로 강화시켜줍니다.</p>
+                </div>
+                <div class="listwrap">
+                    <% for ( let i = 0 ; i < prdData.length; i++) { %>
+                        <div class="listbox">
+                            <div class="prd_img"><img src="/upload/<%- prdData[i].thumbnail%>"></div>
+                            <p class="prdname"><%- prdData[i].name%></p>
+                            <p class="prdkind"><%- prdData[i].kind%></p>
+                            <p class="prdprice"><%- prdData[i].price%></p>
+                        </div>
+                    <% }%>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+    <%- include ("common/footer.ejs")%>
+    <script src="/js/menu.js"></script>
+   
+</body>
+</html>

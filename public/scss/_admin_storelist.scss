@@ -1,0 +1,66 @@
+.admin_menu { 
+    width: 20%;
+    margin: 0 auto 100px;
+    display: flex;
+
+    li { 
+        line-height: 40px;
+        margin: 0 30px;
+        a  { 
+            font-size: 15px;
+            color: #333;
+            font-weight: bold;
+            display: block;
+            width: 100%;
+            position: relative;
+            &::after { 
+                content: "";
+                width: 100%;
+                height: 1px;
+                background-color: #222;
+                display: block;   
+                position:absolute;
+                bottom: 30px;
+                left: 0;
+                bottom: 0;
+                opacity: 0;
+                transition: all 0.5s;
+
+            }
+            &:hover { 
+                &::after {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+.storewrap { 
+    display: flex;
+    flex-wrap: wrap;
+    .list {
+        border: 1px solid #c7c7c7;
+        padding: 15px;
+        width: 35%;
+        font-size: 14px;
+        margin: 0 25px;
+        .line { 
+            margin:10px 0 ;
+            display: flex;
+            >div { 
+                margin-right: 20px ;
+            }
+            .s_title { 
+                width: 100px;
+            }
+            .store_ad { 
+                width: 80%;
+                line-height: 25px;
+            }
+            >img{ 
+                width: 250px;
+            }
+        }
+    }
+}

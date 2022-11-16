@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>admin prd add</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <%- include ("common/admin_header.ejs")%>
+    <div id="container">
+        <ul class="admin_menu">
+            <li><a href="/admin/prdlist">상품등록페이지</a></li>
+            <li><a href="/admin/storelist">매장등록페이지</a></li>
+        </ul>
+        <ul class="prdWrap">
+            <% for (let i = 0; i < prdData.length ;i++ ) {%>
+                <div class="list">
+                    <h3>Num.<%- prdData[i].num%></h3>
+                    <p>Name:<%- prdData[i].name%></p>
+                    <p>Cat:<%- prdData[i].catagory%></p>
+                    <p>Kind:<%- prdData[i].kind%></p>
+                    <p>Pri:<%- prdData[i].price%></p>
+                    <img src="/upload/<%- prdData[i].thumbnail%>">
+                </div>
+            <% } %>
+            
+        </ul>
+        <form action="/add/prdlist" method="post" enctype="multipart/form-data">
+            <select name="category">
+                <option>All</option>
+                <option>Facial</option>
+                <option>Hand</option>
+                <option>Life Style</option>
+            </select>
+            <input type="text" name="name" placeholder="name">
+            <input type="text" name="kind"  placeholder="kind">
+            <input type="text" name="price" placeholder="price">
+            <input type="file" name="thumbnail" >
+            <button type="submit">submit</button>
+        </form>
+    </div>
+   
+</body>
+</html>

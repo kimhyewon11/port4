@@ -1,0 +1,215 @@
+#container { 
+    .br_cont1 { 
+        display: flex;
+        justify-content: space-between;
+        padding: 100px 170px 220px;
+        >h2 { 
+            font-size: 40px;
+        }
+        .bs_info { 
+            width: 480px;
+            >p { 
+                line-height: 25px;
+                font-size: 15px;
+            }
+            .top_t { 
+                margin-bottom: 25px;
+                font-weight: bold;
+                font-size: 18px;
+                line-height: 28px;
+            }
+        }
+    }
+    .br_cont2 { 
+        >img { 
+            width: 100vw;
+            height: 625px;
+        }
+        padding-bottom: 150px;
+    }
+    .br_cont3 { 
+        margin-bottom: 120px;
+        .center { 
+            .left { 
+                .view { 
+                    width: 100%;
+                    .box{ 
+                        width: 100%;
+                        img { 
+                            width: 100%;
+                            height: 800px;
+                        }
+                    }
+                }
+            }
+            .right { 
+                width: 35%;
+                .title { 
+                    font-size: 18px;
+                    line-height: 53px;
+                    font-weight: bold;
+                }
+                .sub_title { 
+                    font-size: 15px;
+                    line-height: 28px;
+                    margin-bottom: 35px;
+                }
+                .more { 
+                    text-align: left;
+                    font-size: 13px;
+                    color: #222;
+                    font-weight: bold;
+                    >span { 
+                        font-size: 18px;
+                        position: relative;
+                        top: 4px;
+                        left: 5px;
+                        transition: all 0.5s;
+                    }
+                    &:hover { 
+                        >span { 
+                            left: 13px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .br_cont4 { 
+        .center {
+            .left { 
+                .view { 
+                    width: 100%;
+                }
+            }
+            .right { 
+                width: 45%;
+                height: 800px;
+                position: relative;
+                .sub_title { 
+                    position: absolute;
+                    line-height: 28px;
+                    width: 70%;
+                    right: 0;
+                    bottom: 0;
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+    .br_cont5 { 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 80vh;
+        .cdWrap { 
+            width: 80%;
+            display: flex;
+            justify-content: center;
+            .dir_box { 
+                border-right:1px solid #ccc ;
+            }
+            >.box{ 
+                width: 45%;
+                text-align: center;
+                padding: 0 150px;
+                >h3 { 
+                    font-size: 40px;
+                    margin-bottom: 40px;
+                }
+                .context { 
+                    font-size: 15px;
+                    line-height: 25px;
+                    margin-bottom: 40px;
+                }
+                .name { 
+                    font-size: 13px;
+                    line-height: 20px;
+                }
+            }
+        }
+    }
+    .br_cont6 { 
+        justify-content: center;
+            .center {
+                width: 90%;
+                .slider { 
+                    width: 100%;
+                    &:hover { 
+                        .clickbtn { 
+                            .prev_btn { margin-left: 0;}
+                            .next_btn {margin-right: 0; }
+                        }
+                    }
+                    padding-bottom: 50px;
+                    position: relative;
+                    overflow: hidden;
+                    .line { 
+                        width: 60%;
+                        height: 2px;
+                        background-color: #555;
+                        position: absolute;
+                        bottom: -2px;
+                        left: 0;
+                        // left: 300px;
+                    }
+                    .clickbtn { 
+                        >div {
+                            cursor: pointer;
+                            >span { 
+                                width: 45px;
+                                line-height: 45px;
+                                color: #fff;
+                                display: block;
+                                text-align: center;
+                                background-color: rgba(0, 0, 0,0.5);
+                            }
+                        }
+                        .prev_btn {
+                            position: absolute;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            left: 0;
+                            margin-left: -45px;
+                            transition: all 0.5s;
+                        }
+                        .next_btn { 
+                            position: absolute;
+                            top: 50%;
+                            transform: translateY(-50%);         
+                            right: 0;
+                            margin-right: -45px;
+                            transition: all 0.5s;
+
+                        }
+                    }
+                    .view { 
+                        width: 300%;
+                        transition: all 0.5s;
+                        .box { 
+                            width: 100%;
+                            height: 700px;
+                            background-color: #f5f4ef;
+                            margin-right:0 ;
+                            >img { 
+                                width: 100%;
+                                height:100% ;
+                                margin-top: 0;
+                            }
+                        }
+                        .b_box { 
+                            padding: 0;
+                            height: 100%;
+                        }
+                    }
+                }
+             
+            }
+    }
+    .slogan { 
+        margin: 50px auto 150px;
+        width: 87%;
+        text-align: center;
+        font-size: 28px;
+    }
+}

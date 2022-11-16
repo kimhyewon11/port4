@@ -1,0 +1,28 @@
+@media screen and (max-width:930px){
+    #footer { 
+        .center { 
+           flex-direction: column;
+           .right {
+                .event  {
+                    margin: 35px 10px;
+                }
+           }
+        }
+    }
+}
+@media screen and (max-width:540px){
+    #footer { 
+        .center { 
+           .left { 
+            .bot_info { 
+                >p { margin-bottom: 30px;}
+            }
+           }
+           .right {
+                .event  {
+                    margin: 35px 10px;
+                }
+           }
+        }
+    }
+}

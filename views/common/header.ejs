@@ -1,0 +1,82 @@
+<div id="header">
+    <div class="center">
+        <h1 class="logo"><a href="/"><img src="/img/logo.svg"></a></h1>
+        <div class="gnbWrap">
+            <div class="gnbbg"></div>
+            <ul class="gnb">
+                <li class="main">
+                    <a  href="#">EATH </a>
+                    <ul class="depth2">
+                        <li><a href="/brand">브랜드 스토리</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/menu/all">제품</a>
+                    <ul class="depth2 widthchg">
+                        <li><a href="/menu/all">ALL</a></li>
+                        <li><a href="/menu/facial">Facial</a></li>
+                        <li><a href="/menu/hand">Hand</a></li>
+                        <li><a href="/menu/life">Life Style</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/store">경험</a>
+                    <ul class="depth2 widthchg">
+                        <li><a href="/store">매장</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/mag">매거진</a>
+                    <ul class="depth2">
+                        <li><a href="/mag">매거진</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <a class="login" href="/admin">로그인</a>
+        <div class="m_btn">
+            <span class="one"></span>
+            <span class="two"></span>
+        </div>
+        <div class="m_menuWrap">
+            
+            <ul class="m_menu">
+                <li><a href="/menu/all">제품</a></li>
+                <li><a href="/brand">브랜드</a></li>
+                <li><a href="/store">경험</a></li>
+                <li><a href="/mag">매거진</a></li>
+            </ul>
+            <a class="login" href="/admin">로그인</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    const gnbWrap = document.querySelector(".gnbWrap");
+    const depth = document.querySelectorAll(".depth2");
+    const gnbbg = document.querySelector(".gnbbg");
+
+    gnbWrap.addEventListener("mouseenter",function(){
+        depth.forEach(function(e){
+            console.log(e);
+            e.style.opacity = 1;
+        })
+        gnbbg.style.opacity = 1;
+    });
+    gnbWrap.addEventListener("mouseleave",function(){
+        depth.forEach(function(e){
+            console.log(e);
+            e.style.opacity = 0;
+        })
+        gnbbg.style.opacity = 0;
+    });
+
+
+    const mbtn = document.querySelector(".m_btn");
+    const m_menuWrap =document.querySelector(".m_menuWrap")
+    mbtn.addEventListener("click",()=>{
+        mbtn.classList.toggle("on");
+        m_menuWrap.classList.toggle("active");
+    })
+
+</script>

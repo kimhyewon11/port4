@@ -1,0 +1,27 @@
+#admin_header { 
+    background-color: #f5f4ef;
+    .center { 
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 100px 0 50px;
+        .logWrap { 
+            >a { 
+                margin: 0 20px;
+                color: #333;
+                font-size: 15px;
+            }
+            .login { 
+                line-height: 120px;
+            }
+        }
+    }
+}
+#container { 
+    #logform { 
+        width: 80%;
+        margin: 0 auto;
+    }
+}

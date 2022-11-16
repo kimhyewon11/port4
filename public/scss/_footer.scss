@@ -1,0 +1,50 @@
+#footer  {
+    display: flex;
+    justify-content: center;
+    background-color: #eeede5;
+    padding: 80px 0;
+    .center { 
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+        .left { 
+            width: 50%;
+            .top_info { 
+                margin-bottom: 150px;
+                >h6 { 
+                    font-size: 22px;
+                    font-weight: bold;
+                    margin-bottom: 20px;
+                }
+                >p { 
+                    color: #333;
+                    font-size: 14px;
+                    line-height: 25px;
+                }
+            }
+            .bot_info  {
+                >p { 
+                    font-size: 14px;
+                    color: #333;
+                    line-height: 25px;
+                    margin-bottom: 10px;
+                }
+            }
+            .copy { 
+                font-size: 12px;
+                color: #888;
+            }
+        }
+        .right {
+            display: flex;
+            .event {
+                margin: 0 35px;
+                li { 
+                    color: #333;
+                    line-height: 27px;
+                    font-size: 14px;
+                }
+            }
+         }
+    }
+}
