@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
 </head>
 <body>
     <%- include ("common/header.ejs")%>
@@ -22,7 +24,7 @@
             <!-- 처음들어왔을 때 모든 매장 리스트 보여줌-->
             <% for(let i=0; i < storeData.length; i++){ %>
                 <div class="list" >
-                    <div class="linewrap">
+                    <div class="linewrap"  data-aos="fade-down" data-aos-delay="100"  data-aos-duration="2000">
                         <div class="line line1">
                             <div class="showroom">Showroom</div>
                             <div class="roomname"><%- storeData[i].name %></div>
@@ -43,10 +45,10 @@
                         </div>
                         
                     </div>
-                    <div class="storeImg">
+                    <div class="storeImg"  data-aos="fade-right" data-aos-delay="100"  data-aos-duration="2000">
                         <img src="/upload/<%- storeData[i].thumbnail%>">
                     </div>
-                    <div class="storeContext">
+                    <div class="storeContext"  data-aos="fade-left" data-aos-delay="100"  data-aos-duration="2000">
                         <div><%- storeData[i].context %></div>
                     </div>
                 </div>
@@ -78,7 +80,10 @@
         </div>
        
     <%- include ("common/footer.ejs")%>
-
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
     <script src="/js/hangjungdong.js"></script>
     <script src="/js/storeselect.js"></script>
 </body>

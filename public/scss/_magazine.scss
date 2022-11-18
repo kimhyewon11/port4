@@ -13,7 +13,7 @@
             justify-content: space-between;
             width: 100%;
             .leftwrap { 
-                width: 50%;
+                width: 50%; 
                 .wrap { 
                     >img { 
                         width: 100%;
@@ -38,7 +38,9 @@
             }
             .rightwrap { 
                 width: 40%;
-
+                position: relative;
+                right: 0;
+                top: 0;
                 .wrap { 
                     padding-bottom: 40px;
                     margin-bottom: 80px;

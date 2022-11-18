@@ -686,24 +686,22 @@ textarea {
   margin-right: -45px;
   transition: all 0.5s;
 }
-#container .br_cont6 .center .slider .view {
+#container .br_cont6 .center .slider > .views {
   width: 300%;
   transition: all 0.5s;
 }
-#container .br_cont6 .center .slider .view .box {
+#container .br_cont6 .center .slider > .views > .b_box {
   width: 100%;
   height: 700px;
   background-color: #f5f4ef;
   margin-right: 0;
+  padding: 0;
+  height: 100%;
 }
-#container .br_cont6 .center .slider .view .box > img {
+#container .br_cont6 .center .slider > .views > .b_box > img {
   width: 100%;
   height: 100%;
   margin-top: 0;
-}
-#container .br_cont6 .center .slider .view .b_box {
-  padding: 0;
-  height: 100%;
 }
 #container .slogan {
   margin: 50px auto 150px;
@@ -988,6 +986,9 @@ form textarea {
 }
 #container > .m_center .m_content .rightwrap {
   width: 40%;
+  position: relative;
+  right: 0;
+  top: 0;
 }
 #container > .m_center .m_content .rightwrap .wrap {
   padding-bottom: 40px;
@@ -1539,6 +1540,9 @@ form textarea {
   #container .br_cont5 .cdWrap > .box {
     width: 45%;
     padding: 0 100px;
+  }
+  #container .br_cont6 .center .slider > .views {
+    width: 300%;
   }
 }
 @media screen and (max-width: 930px) {
