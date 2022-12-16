@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>menu</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+</head>
+<body>
+    <%- include ("common/header.ejs")%>
+    <div id="container">
+        <div class="mgzd_cont1">
+            <div class="leftwrap">
+                <img src="/upload/<%- mgzData.thumbnail%>"> 
+            </div>
+            <div class="rightwrap">
+                <div class="subtitle"><%- mgzData.subtitle%></div>
+                <div class="title"><%- mgzData.title%></div>
+                <div class="content"><%- mgzData.content%></div>
+            </div>
+        </div>
+        <div class="mgzd_cont2">
+            <div class="leftwrap">
+                <img src="/upload/<%- mgzData.contImg%>"> 
+            </div>
+            <div class="rightwrap">
+                <div class="content1"><%- mgzData.content1%></div>
+            </div>
+        </div>
+        <div class="mgzd_cont3">
+            <a href="/mag"><span class="material-symbols-outlined">arrow_back</span>뒤로가기</a>
+        </div>
+    </div>
+    <%- include ("common/footer.ejs")%>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+   
+</body>
+</html>

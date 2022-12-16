@@ -1,8 +1,7 @@
 .admin_menu { 
-    width: 20%;
+    width: 40%;
     margin: 0 auto 100px;
     display: flex;
-
     li { 
         line-height: 40px;
         margin: 0 30px;
@@ -25,7 +24,6 @@
                 bottom: 0;
                 opacity: 0;
                 transition: all 0.5s;
-
             }
             &:hover { 
                 &::after {

@@ -20,15 +20,29 @@
             <h2>Archives of Beuaty</h2>
             <div class="m_content">
                 <div class="leftwrap"  data-aos="fade-right" data-aos-delay="100"  data-aos-duration="2000">
-                    <div class="wrap">
-                        <img src="/img/meg1.jpg">
-                        <p class="date">Vogue Magazine</p>
-                        <h6>뷰티 크리에이터가 된 공간 디자이너 양태오</h6>
-                        <p class="context">공간 디자이너 양태오가 뷰티 크리에이터가 됐다. 불면의 밤을 달랠 한방 차가 불러운 아름다운 나비효과</p>
-                    </div>
+                    <a class="mgzbox" href='/mgzdetail/<%- mgzData[0].num%>'>
+                        <div class="wrap">
+                            <img src="/upload/<%- mgzData[0].thumbnail%>">
+                            <p class="date"><%- mgzData[0].subtitle%></p>
+                            <h6><%- mgzData[0].title%></h6>
+                            <p class="context"><%- mgzData[0].content%></p>
+                        </div>
+                    </a>
                 </div>
                 <div class="rightwrap"  data-aos="fade-left" data-aos-delay="100"  data-aos-duration="2000">
-                   
+                    <% for ( let i = 1 ; i < mgzData.length; i++) { %>
+                        <a class="mgzbox" href='/mgzdetail/<%- mgzData[i].num%>'>
+                            <div class="wrap">
+                                <img src="/upload/<%- mgzData[i].thumbnail%>">
+                                <p class="date"><%- mgzData[i].subtitle%></p>
+                                <h6><%- mgzData[i].title%></h6>
+                                <p class="context"><%- mgzData[i].content%></p>
+                            </div>
+                        </a>
+                    <% }%>
+
+
+                    
                 </div>
             </div>
         </div>
@@ -40,7 +54,6 @@
     <script>
         AOS.init();
     </script>
-    <script src="/js/mag_array.js"></script>
    
 </body>
 </html>

@@ -5,7 +5,10 @@
             .gnbWrap { 
                 display: none;
             }
-            .login { 
+            >.logoutWrap{ 
+                display: none;
+            }
+            >.login { 
                 display: none;
             }
             .m_btn { 
@@ -33,10 +36,10 @@
             }
             .m_menuWrap {
                 display: block;
-                width: 85px;
+                width: 100px;
                 height: 500px;
                 position: fixed;
-                right: -85px;
+                right: -100px;
                 top: 0;
                 transition: all 0.5s;
                 .m_menu { 
@@ -69,8 +72,13 @@
                         }
                     }
                 }
-                >.login {
+                >.logoutWrap{
                     display: block;
+                    margin-top: 35px;
+                    >a { 
+                        margin: 0 ;
+                        line-height: 30px;
+                    }
                 }
             }
             .m_menuWrap.active { 
@@ -129,6 +137,16 @@
            .m_btn { 
             right: 0px;
            }
+           .m_menuWrap {
+                .logoutWrap { 
+                    display: flex;
+                    flex-direction: column;
+                    .login,.logout { 
+                        line-height: 30px;
+                        margin: 0 0 0 35px;
+                    }
+                }
+            }
         }
     }
 }

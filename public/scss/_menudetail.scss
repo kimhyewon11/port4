@@ -1,0 +1,88 @@
+#container {
+    .md_cont1 { 
+        width: 90%;
+        margin: 100px auto 150px;
+        display: flex;
+        .leftwrap { 
+            width: 45vw;
+            height: 40vw;
+            background-color:#eeede5 ;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 4%;
+            >img { 
+               width: 50%;
+               height: 70%;
+            }
+        }
+        .rightwrap { 
+            width: 33%;
+            .prd_name { 
+                font-size: 28px;
+                margin-bottom: 20px;
+                font-weight: 500;
+            }
+            .prd_kind { 
+                font-size: 18px;
+                margin-bottom: 77%;
+            }
+            .prd_content { 
+                font-size: 15px;
+                line-height: 28px;
+                margin-bottom: 30px;
+                font-weight: 400;
+            }
+            .middlebox { 
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 30px;
+                font-size: 15px;
+                .freeshipping {
+                    line-height: 30px;
+                }
+                .amountwrap { 
+                    display: flex;
+                    align-content: center;
+                    line-height: 30px;
+                    font-weight: 400;
+                    >span {
+                        display: block;
+                        margin: 0 25px;
+                        color: #c7c7c7;
+                        font-size: 30px;
+                    }
+                }
+            }
+            >.btns { 
+                display: flex;
+                justify-content: space-between;
+                border-bottom: 2px solid #222;
+                padding-bottom: 15px;
+                >a {
+                    display: block;
+                    line-height: 69px;
+                    text-align: center;
+                    font-size: 18px;
+                }
+                .price { 
+                    width: 58%;
+                    background-color:#222 ;
+                    color: #fff;
+                }
+                .cart { 
+                    width: 38%;
+                    background-color:#eeede5 ;
+                    color: #222;
+                }
+            }
+        }
+    }
+    .md_cont2 { 
+        margin-bottom: 100px;
+        >img { 
+            width: 100%;
+        }
+    }
+}

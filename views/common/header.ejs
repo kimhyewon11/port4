@@ -33,20 +33,33 @@
                 </li>
             </ul>
         </div>
+        <% if(!userdata) {%>
         <a class="login" href="/admin">로그인</a>
+        <% } else { %>
+            <div class="logoutWrap">
+                <a class="login" href="/admin/prdlist">관리자 메뉴</a>
+                <a class="logout" href="/logout">Logout</a>
+            </div>
+        <% }%>
         <div class="m_btn">
             <span class="one"></span>
             <span class="two"></span>
         </div>
         <div class="m_menuWrap">
-            
             <ul class="m_menu">
                 <li><a href="/menu/all">제품</a></li>
                 <li><a href="/brand">브랜드</a></li>
                 <li><a href="/store">경험</a></li>
                 <li><a href="/mag">매거진</a></li>
             </ul>
+            <% if(!userdata) {%>
             <a class="login" href="/admin">로그인</a>
+            <% } else { %>
+            <div class="logoutWrap">
+                <a class="login" href="/admin/prdlist">관리자 메뉴</a>
+                <a class="logout" href="/logout">Logout</a>
+            </div>
+            <% }%>
         </div>
     </div>
 </div>

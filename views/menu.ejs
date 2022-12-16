@@ -30,12 +30,12 @@
                 </div>
                 <div class="listwrap">
                     <% for ( let i = 0 ; i < prdData.length; i++) { %>
-                        <div class="listbox">
+                        <a class="listbox" href='/menudetail/<%- prdData[i].num%>'>
                             <div class="prd_img"><img src="/upload/<%- prdData[i].thumbnail%>"></div>
                             <p class="prdname"><%- prdData[i].name%></p>
                             <p class="prdkind"><%- prdData[i].kind%></p>
                             <p class="prdprice"><%- prdData[i].price%></p>
-                        </div>
+                        </a>
                     <% }%>
                 </div>
             </div>

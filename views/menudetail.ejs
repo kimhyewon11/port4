@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>menu</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+</head>
+<body>
+    <%- include ("common/header.ejs")%>
+    <div id="container">
+        <div class="md_cont1">
+            <div class="leftwrap">
+                <img src="/upload/<%- prdData.thumbnail%>">
+            </div>
+            <div class="rightwrap">
+                <div class="prd_name"><%- prdData.name%></div>
+                <div class="prd_kind"><%- prdData.kind%></div>
+                <div class="prd_content"><%- prdData.content%></div>
+                <div class="middlebox">
+                    <p class="freeshipping">무료배송</p>
+                    <div class="amountwrap">
+                        <span class="mius">-</span>
+                        <p class="amout">1개</p>
+                        <span class="plus">+</span>
+                    </div>
+                </div>
+                <div class="btns">
+                    <a class="price" href="#" ><%- prdData.price%></a>
+                    <a class="cart" href="#" >장바구니</a>
+                </div>
+            </div>
+        </div>
+        <div class="md_cont2">
+            <img src="/upload/<%- prdData.contImg%>">
+        </div>
+    </div>
+    <%- include ("common/footer.ejs")%>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+   
+</body>
+</html>

@@ -1,7 +1,7 @@
 const express = require("express");
 const MongoClient = require("mongodb").MongoClient;
 const moment = require("moment");
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 8080;
 const multer  = require('multer') ; // 파일업로드 라이브러리 multer
 
 const passport = require('passport');
@@ -112,28 +112,32 @@ app.get("/logout",function(req,res){
 //관리자 상품 등록
 app.get("/admin/prdlist",function(req,res){
     db.collection("prdlist").find({}).toArray(function(err,result){
-        res.render("admin_prdlist",{prdData:result,userData:req.user,userdata:req.user});
+        res.render("admin_prdlist",{prdData:result,userdata:req.user});
     })
 });
 
 
 
 //상품을 db 에 넣기 
-app.post("/add/prdlist",upload.single('thumbnail'),(req,res)=>{
-    if(req.file){
-        fileTest=req.file.originalname;
+app.post("/add/prdlist",upload.array('thumbnail'),(req,res)=>{
+    if(req.files){
+        fileTest=req.files[0].originalname;
+        fileTest1=req.files[1].originalname;
     }
     else { 
         fileTest=null;
+        fileTest1=null;
     }
     db.collection("count").findOne({name:"상품등록"},(err,result)=>{
         db.collection("prdlist").insertOne({
             num:result.prdCount+1,
             name:req.body.name,
             thumbnail:fileTest,
+            contImg:fileTest1,
             category:req.body.category,
             price:req.body.price,
-            kind:req.body.kind
+            kind:req.body.kind,
+            content:req.body.content
         },(err,result)=>{
             db.collection("count").updateOne({name:"상품등록"},{$inc:{prdCount:1}},(err,result)=>{
                 res.redirect("/admin/prdlist");
@@ -154,10 +158,10 @@ app.get("/admin/storelist",(req,res)=>{
 app.post("/addstore",upload.single('thumbnail'),(req,res)=>{
     db.collection("count").findOne({name:"매장등록"},(err,result1)=>{
         if(req.file){
-            fileTest1=req.file.originalname;
+            fileTest2=req.file.originalname;
         }
         else { 
-            fileTest1=null;
+            fileTest2=null;
         }
         db.collection("storelist").insertOne({
             num:result1.storeCount + 1,
@@ -180,52 +184,113 @@ app.post("/addstore",upload.single('thumbnail'),(req,res)=>{
 
 
 
+//관리자 매거진등록 페이지
+app.get("/admin/mgzlist",(req,res)=>{
+    //모든 매장리스트 다 보여줌
+    db.collection("mgzlist").find({}).toArray((err,result)=>{
+        res.render("admin_mgzlist",{mgzData:result,userdata:req.user});
+    })
+});
+//매거진 데이터 보내줌 
+app.post("/add/mgzlist",upload.array('thumbnail'),(req,res)=>{
+    if(req.files){
+        fileTest3=req.files[0].originalname;
+        fileTest4=req.files[1].originalname;
+    }
+    else { 
+        fileTest3=null;
+        fileTest4=null
+    }
+    db.collection("count").findOne({name:"매거진등록"},(err,result)=>{
+        db.collection("mgzlist").insertOne({
+            num:result.mgzCount+1,
+            thumbnail:fileTest3,
+            contImg:fileTest4,
+            subtitle:req.body.subtitle,
+            title:req.body.title,
+            content:req.body.content,
+            content1:req.body.content1,
+        },(err,result)=>{
+            db.collection("count").updateOne({name:"매거진등록"},{$inc:{mgzCount:1}},(err,result)=>{
+                res.redirect("/admin/mgzlist");
+            })
+        })
+    })
+})
+
+
+
+
+
+
+
 //메인화면
 app.get("/",function(req,res){
-    res.render("index")
+    res.render("index",{userdata:req.user})
 });
 
 //브랜드 소개
 app.get("/brand",function(req,res){
-    res.render("brand");
+    res.render("brand",{userdata:req.user});
 });
 
 
-//제품 리스트
+//매거진 리스트
 app.get("/mag",function(req,res){
-    res.render("magazine");
+    db.collection("mgzlist").find().toArray((err,result)=>{
+        res.render("magazine",{mgzData:result,userdata:req.user});
+    })  
 });
+
+//매거진 디테일 페이지
+app.get("/mgzdetail/:no",(req,res)=>{
+    db.collection("mgzlist").findOne({num:Number(req.params.no)},function(err,result){
+        res.render("mgzdetail",{mgzData:result,userdata:req.user});
+    });
+});
+
+
 
 //all 메뉴 페이지 
 app.get("/menu/all",(req,res)=>{
     db.collection("prdlist").find().toArray((err,result)=>{
-        res.render("menu",{prdData:result});
+        res.render("menu",{prdData:result,userdata:req.user});
     })
 })
 
 //facial 메뉴 페이지 
 app.get("/menu/facial",(req,res)=>{
     db.collection("prdlist").find({category:"Facial"}).toArray((err,result)=>{
-        res.render("menu",{prdData:result});
+        res.render("menu",{prdData:result,userdata:req.user});
     })
 })
 //hand 메뉴 페이지 
 app.get("/menu/hand",(req,res)=>{
     db.collection("prdlist").find({category:"Hand"}).toArray((err,result)=>{
-        res.render("menu",{prdData:result});
+        res.render("menu",{prdData:result,userdata:req.user});
     })
 })
 //life 메뉴 페이지 
 app.get("/menu/life",(req,res)=>{
     db.collection("prdlist").find({category:"Life Style"}).toArray((err,result)=>{
-        res.render("menu",{prdData:result});
+        res.render("menu",{prdData:result,userdata:req.user});
     })
 })
+
+
+//메뉴 디테일 페이지 
+app.get("/menudetail/:no",(req,res)=>{
+    db.collection("prdlist").findOne({num:Number(req.params.no)},function(err,result){
+        res.render("menudetail",{prdData:result,userdata:req.user});
+    });
+});
+
+
 
 //매장 안내페이지
 app.get("/store",(req,res)=>{
     db.collection("storelist").find({}).toArray((err,result)=>{
-        res.render("store",{storeData:result});
+        res.render("store",{storeData:result,userdata:req.user});
     })
 });
 
@@ -234,13 +299,13 @@ app.get("/search/storelocal",(req,res)=>{
     //시/도는 선택했고 군구는 선택을 안했을 때
     if(req.query.city1 !== "" && req.query.city2 === ""){
         db.collection("storelist").find({sido:req.query.city1}).toArray((err,result)=>{
-            res.render("store",{storeData:result});
+            res.render("store",{storeData:result,userdata:req.user});
         });
     }
     //시도 선택 및 군구 선택 했을 때
     else if(req.query.city1 !== "" && req.query.city2 !== ""){
         db.collection("storelist").find({sido:req.query.city1,sigugun:req.query.city2}).toArray((err,result)=>{
-            res.render("store",{storeData:result});
+            res.render("store",{storeData:result,userdata:req.user});
         });
     }
     //둘다 선택 안했을 경우
@@ -268,7 +333,7 @@ app.get("/search/storename",(req,res)=>{
     //검색어 입력시
     if(req.query.name !== "") {
         db.collection("storelist").aggregate(search).toArray((err,result)=>{
-            res.render("store",{storeData:result});
+            res.render("store",{storeData:result,userdata:req.user});
         })
     }
     //검색어 미입력시

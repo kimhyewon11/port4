@@ -48,6 +48,7 @@
                             opacity: 0;
                         }
                         &:hover { 
+                            font-weight: 700;
                             &::after {
                                 opacity: 1;
                             }
@@ -80,7 +81,15 @@
                 }
             }
         }
-        .login { 
+        .logoutWrap { 
+            .login,.logout { 
+                font-size: 14px;
+                color: #999;
+                line-height: 80px;
+                margin: 0 10px;
+            }
+        }
+        .login,.logout { 
             font-size: 14px;
             color: #999;
             line-height: 80px;
